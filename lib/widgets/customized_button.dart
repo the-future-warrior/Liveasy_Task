@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -5,11 +7,13 @@ class CustomizedButton extends StatelessWidget {
   final String? buttonText;
   final Color? buttonColor = const Color(0xff2E3B62);
   final Color? textColor = Color(0xffffffff);
+  double? width = 216;
   final VoidCallback? onPressed;
 
   CustomizedButton(
       {Key? key,
       this.buttonText,
+      this.width,
       this.onPressed}) : super(key: key);
 
   @override
@@ -20,7 +24,7 @@ class CustomizedButton extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           height: 48,
-          width: 216,
+          width: width,
           decoration: BoxDecoration(
             color: buttonColor,
           ),

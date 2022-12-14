@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:liveasy_task/screens/mobile_number_screen.dart';
 import 'package:liveasy_task/widgets/customized_button.dart';
 
 class SelectLang extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SelectLangState extends State<SelectLang> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/bg1.png"),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
       child: Scaffold(
@@ -101,7 +102,13 @@ class _SelectLangState extends State<SelectLang> {
 
               CustomizedButton(
                 buttonText: "NEXT",
-                onPressed: () {},
+                width: 216,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const MobileNumber()));
+                },
               ),
 
               const SizedBox(height: 80),
